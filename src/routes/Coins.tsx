@@ -9,25 +9,32 @@ interface ICoin {
     name: string;
     symbol: string;
 }
-
+// const Coin = styled.div`
+//     display: flex;
+//     align-items: center;
+//     padding: 10px;
+//     border: 1px solid #ddd;
+//     margin-bottom: 5px;
+// `;
 
 const Coins = () => {
 
+
     const { isLoading, data: coins } = useQuery({ queryKey: ["coins"], queryFn: fetchCoins })
+
+    console.log('coins', coins)
     return (
         <div>
             {
                 isLoading === true ? 'isloading.....' : coins?.map((coin: ICoin) => {
                     return (
-                        <>
-                            <div
-                                key={coin.id}>
-                                <Link to='/:coinId'>
-                                    <img src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`} />
-                                    {coin.name}
-                                </Link >
-                            </div>
-                        </>
+                        <Coin
+                            key={coin.id}>
+                            <Link to='/:coinId'>
+                                <img src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`} />
+                                {coin.name}
+                            </Link >
+                        </Coin>
                     )
                 })
 
