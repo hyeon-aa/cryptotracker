@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchCoins } from "../api";
 import Coin from "./Coin";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 interface ICoin {
     id: string;
@@ -21,7 +21,7 @@ const Coins = () => {
                             <>
                                 <div
                                     key={coin.id}>
-                                    <Link to={`/${coin.id}`}>
+                                    <Link to={`${coin.id}`}>
                                         <img src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`} />
                                         {coin.name}
                                     </Link >
@@ -32,6 +32,7 @@ const Coins = () => {
 
                 }
             </div>
+            <Outlet />
         </>
     );
 };
