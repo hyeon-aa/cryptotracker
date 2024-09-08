@@ -1,12 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
-const Coin = (props) => {
-
-    const params = useParams();
-    console.log('params', params)
+const Coin = () => {
+    const { coinId } = useParams();
+    console.log('params', coinId)
     return (
         <div>
-            {/* {props.id} */}
+            ddddsddd
         </div>
     );
 };
