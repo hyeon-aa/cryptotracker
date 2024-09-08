@@ -5,7 +5,7 @@ const Coin = () => {
     console.log('params', coinId)
     return (
         <div>
-
+            dsfsdfs
         </div>
     );
 };
