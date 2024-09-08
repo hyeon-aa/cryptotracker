@@ -19,13 +19,13 @@ const Coins = () => {
                     isLoading === true ? 'isloading.....' : coins?.map((coin: ICoin) => {
                         return (
                             <>
-                                <div
+                                <Coin
                                     key={coin.id}>
                                     <Link to={`/${coin.id}`}>
                                         <img src={`https://cryptoicon-api.pages.dev/api/icon/${coin.symbol.toLowerCase()}`} />
                                         {coin.name}
                                     </Link >
-                                </div>
+                                </Coin>
                             </>
                         )
                     })
